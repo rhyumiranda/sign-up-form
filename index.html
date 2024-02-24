@@ -14,40 +14,53 @@
       <div class="image"></div>
     </div>
     <div class="sign-up-form">
-      <h1>Sign Up</h1>
-      <form action="#" method="post">
-        <div class="row-one">
-          <div class="column-one">
-            <input type="text" name="first-name" id="first-name" required>
-            <label for="first-name">First Name</label>
+      <div class="form-container">
+        <h1>Create an account ></h1>
+        <p>Let's get started. Are you ready to be part of something new? <br><span>Then boldly move forward with us!</span></p>
+        <form action="#" method="post">
+          <div class="row-one">
+            <div class="column-one">
+              <input type="text" name="first-name" id="first-name" required>
+              <label for="first-name">First Name</label>
+            </div>
+            <div class="column-two">
+              <input type="text" name="last-name" id="last-name" required>
+              <label for="last-name">Last Name</label>
+            </div>
           </div>
-          <div class="column-two">
-            <label for="last-name">Last Name</label>
-            <input type="text" name="last-name" id="last-name" required>
+          <div class="row-two">
+            <div class="column-one">
+              <input type="email" name="email" id="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="column-two">
+              <input type="tel" name="phone-number" id="phone-number" required>
+              <label for="phone-number">Phone Number</label>
+            </div>
           </div>
-        </div>
-        <!-- <div class="row-two">
-          <div class="column-one">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+          <div class="row-three">
+            <div class="column-one">
+              <input type="password" name="password" id="password" required>
+              <label for="password">Password</label>
+            </div>
+            <div class="column-two">
+              <input type="password" name="confirm-password" id="confirm-password" required>
+              <label for="confirm-password">Confirm Password</label>
+            </div>
           </div>
-          <div class="column-two">
-            <label for="phone-number">Phone Number</label>
-            <input type="tel" name="phone-number" id="phone-number" required>
+          <div class="row-four">
+            <div class="col-one">
+              <input type="checkbox" name="term-and-conditons">
+              <label for="term-and-conditons">I have read and agreed to the <a href="#">terms and conditions</a>.</label>
+            </div>
+            <div class="col-two">
+              <input type="checkbox" name="term-and-privacy">
+              <label for="term-and-privacy">Check to subscribe to our newsletter.</label>
+            </div>
           </div>
-        </div>
-        <div class="row-three">
-          <div class="column-one">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-          </div>
-          <div class="column-two">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" name="confirm-password" id="confirm-password" required>
-          </div>
-        </div> -->
-        <!-- <button type="submit">Submit</button> -->
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>
