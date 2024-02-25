@@ -17,45 +17,54 @@
       <div class="form-container">
         <h1>Create an account ></h1>
         <p>Let's get started. Are you ready to be part of something new? <br><span>Then boldly move forward with us!</span></p>
-        <form action="#" method="post">
+        <form onsubmit="return validate()" action="#" method="post" id="form">
           <div class="row-one">
             <div class="column-one">
-              <input type="text" name="first-name" id="first-name" required>
+              <input type="text" name="first-name" id="first-name">
+              <div class="fn-error"></div>
               <label for="first-name">First Name</label>
+              
             </div>
             <div class="column-two">
-              <input type="text" name="last-name" id="last-name" required>
+              <input type="text" name="last-name" id="last-name">
+              <div class="ln-error"></div>
               <label for="last-name">Last Name</label>
             </div>
           </div>
           <div class="row-two">
             <div class="column-one">
-              <input type="email" name="email" id="email" required>
+              <input type="email" name="email" id="email">
               <label for="email">Email</label>
+              <div class="email-error"></div>
             </div>
             <div class="column-two">
-              <input type="tel" name="phone-number" id="phone-number" required>
+              <input type="tel" name="phone-number" id="phone-number">
               <label for="phone-number">Phone Number</label>
+              <div class="phone-error"></div>
             </div>
           </div>
           <div class="row-three">
             <div class="column-one">
-              <input type="password" name="password" id="password" required>
+              <input type="password" name="password" id="password">
               <label for="password">Password</label>
+              <div class="password-error"></div>
             </div>
             <div class="column-two">
-              <input type="password" name="confirm-password" id="confirm-password" required>
+              <input type="password" name="confirm-password" id="confirm-password">
               <label for="confirm-password">Confirm Password</label>
+              <div class="confirm-error"></div>
             </div>
           </div>
           <div class="row-four">
             <div class="col-one">
               <input type="checkbox" name="term-and-conditons">
               <label for="term-and-conditons">I have read and agreed to the <a href="#">terms and conditions</a>.</label>
+              <div class="condition-error"></div>
             </div>
             <div class="col-two">
               <input type="checkbox" name="term-and-privacy">
               <label for="term-and-privacy">Check to subscribe to our newsletter.</label>
+              <div class="newsletter-error"></div>
             </div>
           </div>
           <button type="submit">Submit</button>
