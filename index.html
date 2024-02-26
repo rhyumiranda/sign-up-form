@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/normalize/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./js/script.js" defer></script>
+  <script defer src="./js/script.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -17,57 +17,57 @@
       <div class="form-container">
         <h1>Create an account ></h1>
         <p>Let's get started. Are you ready to be part of something new? <br><span>Then boldly move forward with us!</span></p>
-        <form onsubmit="return validate()" action="#" method="post" id="form">
+        <form id="form">
           <div class="row-one">
-            <div class="column-one">
-              <input type="text" name="first-name" id="first-name">
-              <div class="fn-error"></div>
+            <div class="column-one form-groups">
+              <input type="text" name="first-name" id="first-name" pattern="[^a-zA-Z ]" required>
               <label for="first-name">First Name</label>
+              <div id="fn-error" class="error"></div>
               
             </div>
-            <div class="column-two">
-              <input type="text" name="last-name" id="last-name">
-              <div class="ln-error"></div>
+            <div class="column-two form-groups">
+              <input type="text" name="last-name" id="last-name" required>
               <label for="last-name">Last Name</label>
+              <div id="ln-error" class="error"></div>
             </div>
           </div>
           <div class="row-two">
-            <div class="column-one">
+            <div class="column-one form-groups">
               <input type="email" name="email" id="email">
               <label for="email">Email</label>
-              <div class="email-error"></div>
+              <div id="email-error" class="error"></div>
             </div>
-            <div class="column-two">
+            <div class="column-two form-groups">
               <input type="tel" name="phone-number" id="phone-number">
               <label for="phone-number">Phone Number</label>
-              <div class="phone-error"></div>
+              <div id="phone-error" class="error"></div>
             </div>
           </div>
           <div class="row-three">
-            <div class="column-one">
+            <div class="column-one form-groups">
               <input type="password" name="password" id="password">
               <label for="password">Password</label>
-              <div class="password-error"></div>
+              <div id="pw-error" class="error"></div>
             </div>
-            <div class="column-two">
+            <div class="column-two form-groups">
               <input type="password" name="confirm-password" id="confirm-password">
               <label for="confirm-password">Confirm Password</label>
-              <div class="confirm-error"></div>
+              <div id="spw-error" class="error"></div>
             </div>
           </div>
           <div class="row-four">
-            <div class="col-one">
+            <div class="col-one form-groups">
               <input type="checkbox" name="term-and-conditons">
               <label for="term-and-conditons">I have read and agreed to the <a href="#">terms and conditions</a>.</label>
-              <div class="condition-error"></div>
+              <div id="tc-error" class="error"></div>
             </div>
-            <div class="col-two">
+            <div class="col-two form-groups">
               <input type="checkbox" name="term-and-privacy">
               <label for="term-and-privacy">Check to subscribe to our newsletter.</label>
-              <div class="newsletter-error"></div>
+              <div id="tp-error" class="error"></div>
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Register</button>
         </form>
       </div>
     </div>
