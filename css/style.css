@@ -92,7 +92,7 @@ Text Input Animations */
 .row-two,
 .row-three{
   width: 100%;
-  height: 70px;
+  height: 90px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
@@ -124,7 +124,6 @@ Text Input Animations */
   text-decoration: none;
   color: var(--primary-color);
 }
-
 
 .row-four .col-one input,
 .row-four .col-two input{
@@ -170,11 +169,19 @@ input:-webkit-autofill:active{
 }
 
 .column-one input:focus ~ label,
-.column-one input:valid ~ label,
-.column-two input:focus ~ label,
-.column-two input:valid ~ label{
+.column-two input:focus ~ label{
   transform: translateY(-20px);
-  color: gray;
+  font-size: .9rem;
+  color: rgb(158, 118, 87);
+}
+
+.not-empty{
+  transform: translateY(-20px);
+  color: rgb(158, 118, 87);
+}
+
+.fs{
+  font-size: 1rem;
 }
 
 .column-one label,
@@ -184,6 +191,15 @@ input:-webkit-autofill:active{
   transition: transform 0.3s ease;
   font-size: 1rem;
 }
+
+.error{
+  position: absolute;
+  padding: 10px 0;
+  font-size: .8rem;
+  font-weight: 400;
+  color: rgb(255, 120, 120);
+}
+
 
 /* ++++++++++++
 Button */
