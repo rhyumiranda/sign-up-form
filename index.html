@@ -47,7 +47,7 @@
             <div class="column-one">
               <input type="password" name="password" id="password" pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/" required>
               <label for="password">Password</label>
-              <span class="material-symbols-outlined" id="pwv" onclick="togglePasswordVisibility()">
+              <span class="material-symbols-outlined" id="pwv" onclick="togglePasswordVisibility('password', 'pwv')">
                 visibility_off
               </span>
               <div id="pw-error" class="error">
@@ -62,7 +62,8 @@
             <div class="column-two">
               <input type="password" name="confirm-password" id="confirm-password" minlength="8" maxlength="16" required>
               <label for="confirm-password">Confirm Password</label>
-              <span class="material-symbols-outlined" id="cpwv">
+              <span class="material-symbols-outlined" id="cpwv" 
+              onclick="togglePasswordVisibility('confirm-password', 'cpwv')">
                 visibility_off
               </span>
               <div id="cpw-error" class="error"></div>
