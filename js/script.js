@@ -165,7 +165,7 @@ function validatePassword(){
     let cpwInputVal = cpwInput.value;
     const submitBtn = document.getElementById('submit');
 
-    if(pwInput.value != cpwInputVal || cpwInputVal == ""){
+    if(pwInput.value != cpwInputVal){
       cpwError.textContent = "Password entered do not match. Please try again.";
       submitBtn.disabled = true;
     } else {
@@ -183,9 +183,9 @@ function validatePassword(){
   });
 };
 
-function togglePasswordVisibility(){
-  let passwordInput = document.getElementById('password');
-  let status = document.getElementById('pwv');
+function togglePasswordVisibility(parent, child){
+  let passwordInput = document.getElementById(parent);
+  let status = document.getElementById(child);
   let currentStatus = status.innerText;
 
   if(currentStatus == "visibility"){
