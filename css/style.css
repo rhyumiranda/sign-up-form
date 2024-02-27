@@ -218,13 +218,27 @@ Button */
   font-weight: 500;
   width: 30%;
   transition: all 0.3s ease;
-  cursor: pointer;
 
   margin-top: 10px;
 }
 
-.form-container button[type="submit"]:hover{
+.form-container button[type="submit"]:disabled{
+  background-color: #6c5436;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #34291b;
+  color: white;
+  font-weight: 500;
+  width: 30%;
+  transition: all 0.3s ease;
+
+  margin-top: 10px;
+}
+
+.form-container button[type="submit"]:enabled:hover{
   background-color: #ff8345;
+  cursor: pointer;
   border: 2px solid rgb(255, 181, 135);
 }
 
@@ -240,4 +254,9 @@ Button */
   text-decoration: none;
   color: #ff8345;
   font-weight: 500;
+}
+
+#cpwv,
+#pwv{
+  cursor: pointer;
 }
