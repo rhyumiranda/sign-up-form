@@ -13,7 +13,7 @@ function validateName(){
     let fnInputVal = fnInput.value;
   
     if(nameReg.test(fnInputVal)){
-      fnError.textContent = "Numerical and special characters are not allowed";
+      fnError.textContent = "Numerical and special characters are not allowed.";
     } else{
       fnError.textContent = "";
     };
@@ -32,7 +32,7 @@ function validateName(){
     let lnInputVal = lnInput.value;
   
     if(nameReg.test(lnInputVal)){
-      lnError.textContent = "Numerical and special characters are not allowed";
+      lnError.textContent = "Numerical and special characters are not allowed.";
     } else{
       lnError.textContent = "";
     };
@@ -45,7 +45,7 @@ function validateName(){
       lnInput.nextElementSibling.style.fontSize = '1rem';
     };
   });
-}
+};
 
 function validateEmail(){
   const emailInput = document.getElementById('email');
@@ -72,7 +72,7 @@ function validateEmail(){
       emailInput.nextElementSibling.style.fontSize = '1rem';
     };
   });
-}
+};
 
 function validatePhone(){
   const phoneInput = document.getElementById('phone-number');
@@ -89,8 +89,8 @@ function validatePhone(){
     } else if(phoneInputVal == ""){
       phoneError.textContent = "";
     }else {
-      phoneError.textContent = "Alphabetical and special chracters are not allowed";
-    }
+      phoneError.textContent = "Alphabetical and special chracters are not allowed.";
+    };
   
     if(phoneInputVal != ""){
       phoneInput.nextElementSibling.classList.add('not-empty');
@@ -100,7 +100,7 @@ function validatePhone(){
       phoneInput.nextElementSibling.style.fontSize = '1rem';
     };
   });
-}
+};
 
 function validatePassword(){
   const pwInput = document.getElementById('password');
@@ -118,7 +118,6 @@ function validatePassword(){
 
   const cpwInput = document.getElementById('confirm-password');
   const cpwError = document.getElementById('cpw-error');
-  let cpwInputVal = cpwInput.value;
 
   pwInput.addEventListener('input', () => {
   let pwInputVal = pwInput.value;
@@ -127,31 +126,31 @@ function validatePassword(){
       singleDigError.textContent = "";
     } else{
       singleDigError.textContent = "Password must have at least a single digit from 0-9.";
-    }
+    };
 
     if(lowCaseReg.test(pwInputVal) || pwInputVal == ""){
       lowercaseError.textContent = "";
     } else{
       lowercaseError.textContent = "Password must have at least one lower case letter.";
-    }
+    };
 
     if(upperCaseReg.test(pwInputVal) || pwInputVal == ""){
       uppercaseError.textContent = "";
     } else{
       uppercaseError.textContent = "Password must have at least one upper case letter.";
-    }
+    };
 
     if(scCaseReg.test(pwInputVal) || pwInputVal == ""){
       specialError.textContent = "";
     } else{
       specialError.textContent = "Password must have at least one special character.";
-    }
+    };
 
     if(minmaxReg.test(pwInputVal) || pwInputVal == ""){
       minmaxError.textContent = "";
     } else{
-      minmaxError.textContent = "Password must be longer than 8 and less than 16 characters";
-    }
+      minmaxError.textContent = "Password must be longer than 8 and less than 16 characters.";
+    };
 
     if(pwInputVal != ""){
       pwInput.nextElementSibling.classList.add('not-empty');
@@ -161,6 +160,43 @@ function validatePassword(){
       pwInput.nextElementSibling.style.fontSize = '1rem';
     };
   });
+
+  cpwInput.addEventListener('input', () => {
+    let cpwInputVal = cpwInput.value;
+    const submitBtn = document.getElementById('submit');
+
+    if(pwInput.value != cpwInputVal || cpwInputVal == ""){
+      cpwError.textContent = "Password entered do not match. Please try again.";
+      submitBtn.disabled = true;
+    } else {
+      submitBtn.disabled = false;
+      cpwError.textContent = "";
+    }
+
+    if(cpwInputVal != ""){
+      cpwInput.nextElementSibling.classList.add('not-empty');
+      cpwInput.nextElementSibling.style.fontSize = '0.9rem';
+    } else{
+      cpwInput.nextElementSibling.classList.remove('not-empty');
+      cpwInput.nextElementSibling.style.fontSize = '1rem';
+    };
+  });
+};
+
+function togglePasswordVisibility(){
+  let passwordInput = document.getElementById('password');
+  let status = document.getElementById('pwv');
+  let currentStatus = status.innerText;
+
+  if(currentStatus == "visibility"){
+    passwordInput.setAttribute("type", "password");
+    status.innerText = "visibility_off";
+  }
+  
+  if(currentStatus == "visibility_off"){
+    passwordInput.setAttribute("type", "text");
+    status.innerText = "visibility";
+  }
 }
 
 function showPlaceholder(element, message){
@@ -171,7 +207,7 @@ function showPlaceholder(element, message){
   element.addEventListener("focusout", () => {
     element.placeholder = "";
   });
-}
+};
 
 function initializePlaceholder(){
   let fnInput = document.getElementById('first-name');
@@ -183,14 +219,19 @@ function initializePlaceholder(){
   showPlaceholder(lnInput, "Doe");
   showPlaceholder(emailInput, "test@email.com");
   showPlaceholder(phoneInput, "00 0000 0000");
-}
+};
 
 function setupEventListeners(){
   validateName();
   validateEmail();
   validatePhone();
   validatePassword();
-}
+};
 
-setupEventListeners();
-initializePlaceholder();
+
+window.addEventListener('load', () => {
+  const submitBtn = document.getElementById('submit');
+  submitBtn.disabled = true;
+  setupEventListeners();
+  initializePlaceholder();
+});
