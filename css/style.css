@@ -102,8 +102,8 @@ Text Input Animations */
 .row-four{
   display: grid;
   width: 100%;
-  height: 70px;
-  margin-top: 20px;
+  height: 50px;
+  margin-top: 60px;
 }
 
 .row-four .col-one,
@@ -128,6 +128,7 @@ Text Input Animations */
 .row-four .col-one input,
 .row-four .col-two input{
   accent-color: orange;
+  cursor: pointer;
 }
 
 .column-one,
@@ -171,7 +172,7 @@ input:-webkit-autofill:active{
 .column-one input:focus ~ label,
 .column-two input:focus ~ label{
   transform: translateY(-20px);
-  font-size: .9rem;
+  font-size: 1rem;
   color: rgb(158, 118, 87);
 }
 
@@ -180,15 +181,15 @@ input:-webkit-autofill:active{
   color: rgb(158, 118, 87);
 }
 
-.fs{
-  font-size: 1rem;
+.fnt-label{
+  font-size: .9rem;
 }
 
 .column-one label,
 .column-two label{
   position: absolute;
   left: 0;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 1rem;
 }
 
@@ -198,7 +199,10 @@ input:-webkit-autofill:active{
   font-size: .8rem;
   font-weight: 400;
   color: rgb(255, 120, 120);
+  line-height: 1.2;
+  letter-spacing: 1.2;
 }
+
 
 
 /* ++++++++++++
@@ -215,9 +219,25 @@ Button */
   width: 30%;
   transition: all 0.3s ease;
   cursor: pointer;
+
+  margin-top: 10px;
 }
 
 .form-container button[type="submit"]:hover{
   background-color: #ff8345;
   border: 2px solid rgb(255, 181, 135);
+}
+
+#sign-in {
+  font-size: .8rem;
+  text-align: left;
+  padding: 0;
+  margin: 10px 0;
+  letter-spacing: 1.2;
+}
+
+#sign-in a{
+  text-decoration: none;
+  color: #ff8345;
+  font-weight: 500;
 }
