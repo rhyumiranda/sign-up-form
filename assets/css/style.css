@@ -35,7 +35,7 @@ body {
 .image {
   width: 100%;
   height: 100%;
-  background-image: url("/assets/bg/img.jpg");
+  background-image: url("./assets/bg/img.jpg");
   background-size: cover;
 }
 
@@ -266,11 +266,12 @@ Other options text */
 
 #cpwv,
 #pwv {
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .pass {
-  top: 10px;
+  top: 6px;
 }
 
 /* ====================
@@ -285,12 +286,12 @@ Other options text */
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 525px) {
   .row-one,
   .row-two,
   .row-three {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: none;
+    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: .7fr;
     justify-content: flex-start;
     align-items: center;
     height: 150px;
@@ -318,9 +319,5 @@ Other options text */
     text-decoration: none;
     color: #ff8345;
     font-weight: 500;
-  }
-
-  .error {
-    position: relative;
   }
 }
