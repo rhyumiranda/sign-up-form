@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/normalize/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script defer src="./js/script.js"></script>
   <title>Document</title>
 </head>
@@ -44,8 +45,11 @@
           </div>
           <div class="row-three">
             <div class="column-one">
-              <input type="text" name="password" id="password" required>
+              <input type="password" name="password" id="password" pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/" required>
               <label for="password">Password</label>
+              <span class="material-symbols-outlined" id="pwv" onclick="togglePasswordVisibility()">
+                visibility_off
+              </span>
               <div id="pw-error" class="error">
                 
                 <span id="single-digit-error"><br></span>
@@ -58,17 +62,20 @@
             <div class="column-two">
               <input type="password" name="confirm-password" id="confirm-password" minlength="8" maxlength="16" required>
               <label for="confirm-password">Confirm Password</label>
+              <span class="material-symbols-outlined" id="cpwv">
+                visibility_off
+              </span>
               <div id="cpw-error" class="error"></div>
             </div>
           </div>
           <div class="row-four">
             <div class="col-one">
-              <input type="checkbox" name="term-and-conditons">
+              <input type="checkbox" name="term-and-conditons" required>
               <label for="term-and-conditons">I have read and agreed to the <a href="#">terms and conditions</a>.</label>
               <div id="tc-error" class="error"></div>
             </div>
             <div class="col-two">
-              <input type="checkbox" name="term-and-privacy">
+              <input type="checkbox" name="term-and-privacy" required>
               <label for="term-and-privacy">Check to subscribe to our newsletter.</label>
               <div id="tp-error" class="error"></div>
             </div>
