@@ -13,10 +13,6 @@
   margin: 0;
 }
 
-body {
-  max-height: 100vh;
-}
-
 /* ====================
   Container
 ========== */
@@ -48,8 +44,8 @@ Forms */
 
 .sign-up-form {
   background-color: var(--background-color);
-  width: 100%;
-  height: 100vh;
+  width: auto;
+  height: calc(100vh + 1px);
   display: grid;
   grid-template-rows: repeat(3, 1fr);
 }
@@ -214,6 +210,9 @@ input:-webkit-autofill:active {
 Button */
 
 .form-container button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #e86726;
   padding: 10px;
   border-radius: 5px;
@@ -221,10 +220,11 @@ Button */
   border: 2px solid var(--secondary-color);
   color: white;
   font-weight: 500;
-  width: 30%;
+  width: 110px;
+  height: 44px;
   transition: all 0.3s ease;
-
-  margin-top: 5px;
+  padding: 0 16px;
+  margin: 10px 0
 }
 
 .form-container button[type="submit"]:disabled {
@@ -235,10 +235,11 @@ Button */
   border: 2px solid #34291b;
   color: white;
   font-weight: 500;
-  width: 30%;
+  width: 110px;
+  height: 44px;
   transition: all 0.3s ease;
-
-  margin-top: 10px;
+  padding: 0 16px;
+  margin: 10px 0
 }
 
 .form-container button[type="submit"]:enabled:hover {
@@ -254,7 +255,6 @@ Other options text */
   font-size: 0.8rem;
   text-align: left;
   padding: 0;
-  margin: 10px 0;
   letter-spacing: 1.2;
 }
 
@@ -297,40 +297,10 @@ Other options text */
     height: 150px;
   }
 
-  .column-two {
-    margin: 0;
-  }
-
-  .row-four label {
-    margin-top: 2px;
-    font-size: 0.7rem;
-    justify-content: center;
-  }
-
-  #sign-in {
-    font-size: 0.7rem;
-    text-align: left;
+  .form-container h1,
+  .form-container p,
+  #form{
     padding: 0;
-    margin: 10px 0;
-    letter-spacing: 1.2;
-  }
-
-  #sign-in a {
-    text-decoration: none;
-    color: #ff8345;
-    font-weight: 500;
-  }
-}
-
-@media screen and (max-width: 525px) {
-  .row-one,
-  .row-two,
-  .row-three {
-    grid-template-rows: repeat(2, 2fr);
-    grid-template-columns: .7fr;
-    justify-content: flex-start;
-    align-items: center;
-    height: 150px;
   }
 
   .column-two {
@@ -359,20 +329,26 @@ Other options text */
 }
 
 @media screen and (max-width: 525px) and (max-height: 800px) {
-
   .row-one,
   .row-two,
   .row-three {
     grid-template-columns: .8fr;
   }
 
-  .sign-up-form{
-    height: 125vh;
-    grid-template-rows: none;
+  .form-container h1,
+  .form-container p,
+  #form{
+    padding: 0;
   }
   
   .sign-up-form h1{
     margin-top: 30px;
+  }
+
+  .sign-up-form{
+    height: calc(100vh + 100px);
+    grid-template-rows: none;
+    height: auto;
   }
 
   .form-container{
@@ -390,17 +366,28 @@ Other options text */
     justify-content: center;
   }
 
-  #sign-in {
+  #sign-in{
     font-size: 0.6rem;
-    text-align: left;
     padding: 0;
-    margin: 10px 0;
     letter-spacing: 1.2;
+    margin-top: 30px 0;
   }
 
   #sign-in a {
     text-decoration: none;
     color: #ff8345;
     font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 320px) and (max-height: 600px) {
+  .sign-up-form{
+    height: auto;
+  }
+  
+  .form-container h1,
+  .form-container p,
+  #form{
+    padding: 0;
   }
 }
