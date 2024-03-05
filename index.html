@@ -80,7 +80,9 @@
                   type="password"
                   name="password"
                   id="password"
-                  pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                  minlength="8"
+                  maxlength="64"
                   required
                 />
                 <label for="password" class="pass">Password</label>
@@ -139,9 +141,9 @@
               </div>
             </div>
             <button type="submit" id="submit">Register</button>
-            <p id="sign-in">
+            <div id="sign-in">
               Do you already have an account? <a href="">Sign in</a>
-            </p>
+            </div>
           </form>
         </div>
       </div>
